@@ -68,11 +68,14 @@ def greet():
     garniture3 = request.form['garniture3']
     garniture4 = request.form['garniture4']
 
-    return render_template('confirmeCommande.html', nom=nom, telephone=telephone,addresse=addresse,croute=croute,sauce=sauce,garniture1=garniture1,garniture2=garniture2,garniture3=garniture3,garniture4=garniture4)
+    garniture4id = request.form[garniture4[0]]
+
+    return render_template('confirmeCommande.html', nom=nom, telephone=telephone,addresse=addresse,croute=croute,sauce=sauce,garniture1=garniture1,garniture2=garniture2,garniture3=garniture3,garniture4=garniture4,garniture4id=garniture4id)
 
 @app.route('/insertionPizza')
 def insertion():
-    
+    cursor = connexion.cursor()
+    cursor.execute("INSERT INTO ")
     return render_template('index.html')
 if (__name__ == '__main__'):
     app.run(debug=True)
