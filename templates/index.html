@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Commande de pizza</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+  </head>
+  <body>
+
+    <h1>Commande de Pizza</h1>
+
+    <form id="formulairePizza" action="/confirmeCommande" method="POST">
+        
+        <div>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+
+            <label for="telephone">Numéro de telephone :</label>
+            <input type="text" id="telephone" name="telephone" required>
+
+            <label for="addresse">Addresse de livraison :</label>
+            <input type="text" id="addresse" name="addresse" required>
+        </div>
+        <div>
+            <label for="croute">Croûte :</label>
+            <select id="croute" name="croute" required>
+                <option value="Classique">Classique</option>
+                <option value="Mince">Mince</option>
+                <option value="Épaisse">Épaisse</option>
+            </select>
+        </div>
+        
+        <div>
+            <label for="sauce">Sauce :</label>
+            <select id="sauce" name="sauce" required>
+                <option value="Tomate">Tomate</option>
+                <option value="Spaghetti">Spaghetti</option>
+                <option value="Alfredo">Alfredo</option>
+            </select>
+        </div>    
+        
+        <div id="garniture">
+            <label for="garniture1">Garnitures : </label>
+            <select id="garniture1" name="garniture1" required>
+                <option value="">Veuiller choisir une garniture</option>
+                <option value="Aucune">Aucune</option>
+                <option value="Pepperoni">Pepperoni</option>
+                <option value="Champignons">Champignons</option>
+                <option value="Oignons">Oignons</option>
+                <option value="Poivrons">Poivrons</option>
+                <option value="Olives">Olives</option>
+                <option value="Anchois">Anchois</option>
+                <option value="Bacon">Bacon</option>
+                <option value="Poulet">Poulet</option>
+                <option value="Maïs">Maïs</option>
+                <option value="Fromage">Fromage</option>
+                <option value="Piments_forts">Piments forts</option>
+            </select>
+
+            <select id="garniture2" name="garniture2" required>
+                <option value="">Veuiller choisir une garniture</option>
+                <option value="Aucune">Aucune</option>
+                <option value="Pepperoni">Pepperoni</option>
+                <option value="Champignons">Champignons</option>
+                <option value="Oignons">Oignons</option>
+                <option value="Poivrons">Poivrons</option>
+                <option value="Olives">Olives</option>
+                <option value="Anchois">Anchois</option>
+                <option value="Bacon">Bacon</option>
+                <option value="Poulet">Poulet</option>
+                <option value="Maïs">Maïs</option>
+                <option value="Fromage">Fromage</option>
+                <option value="Piments_forts">Piments forts</option>
+            </select>
+
+            <select id="garniture3" name="garniture3" required>
+                <option value="">Veuiller choisir une garniture</option>
+                <option value="Aucune">Aucune</option>
+                <option value="Pepperoni">Pepperoni</option>
+                <option value="Champignons">Champignons</option>
+                <option value="Oignons">Oignons</option>
+                <option value="Poivrons">Poivrons</option>
+                <option value="Olives">Olives</option>
+                <option value="Anchois">Anchois</option>
+                <option value="Bacon">Bacon</option>
+                <option value="Poulet">Poulet</option>
+                <option value="Maïs">Maïs</option>
+                <option value="Fromage">Fromage</option>
+                <option value="Piments_forts">Piments forts</option>
+            </select>
+
+            <select id="garniture4" name="garniture4" required>
+                <option value="">Veuiller choisir une garniture</option>
+                <option value="Aucune">Aucune</option>
+                <option value="Pepperoni">Pepperoni</option>
+                <option value="Champignons">Champignons</option>
+                <option value="Oignons">Oignons</option>
+                <option value="Poivrons">Poivrons</option>
+                <option value="Olives">Olives</option>
+                <option value="Anchois">Anchois</option>
+                <option value="Bacon">Bacon</option>
+                <option value="Poulet">Poulet</option>
+                <option value="Maïs">Maïs</option>
+                <option value="Fromage">Fromage</option>
+                <option value="Piments_forts">Piments forts</option>
+            </select>
+        </div>
+
+        <!-- Bouton de soumission -->
+        <button type="submit">Valider la commande</button>
+    </form>
+
+    
+  </body>
+</html>
