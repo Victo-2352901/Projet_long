@@ -24,18 +24,18 @@
         <div>
             <label for="croute">Croûte :</label>
             <select id="croute" name="croute" required>
-                <option value="Classique">Classique</option>
-                <option value="Mince">Mince</option>
-                <option value="Épaisse">Épaisse</option>
+                {% for croute in croutes %}
+                <option>{{ croute[1] }}</option>
+                {% endfor %}
             </select>
         </div>
         
         <div>
             <label for="sauce">Sauce :</label>
             <select id="sauce" name="sauce" required>
-                <option value="Tomate">Tomate</option>
-                <option value="Spaghetti">Spaghetti</option>
-                <option value="Alfredo">Alfredo</option>
+                {% for sauce in sauces %}
+                <option>{{ sauce[1] }}</option>
+                {% endfor %}
             </select>
         </div>    
         
@@ -43,66 +43,30 @@
             <label for="garniture1">Garnitures : </label>
             <select id="garniture1" name="garniture1" required>
                 <option value="">Veuiller choisir une garniture</option>
-                <option value="Aucune">Aucune</option>
-                <option value="Pepperoni">Pepperoni</option>
-                <option value="Champignons">Champignons</option>
-                <option value="Oignons">Oignons</option>
-                <option value="Poivrons">Poivrons</option>
-                <option value="Olives">Olives</option>
-                <option value="Anchois">Anchois</option>
-                <option value="Bacon">Bacon</option>
-                <option value="Poulet">Poulet</option>
-                <option value="Maïs">Maïs</option>
-                <option value="Fromage">Fromage</option>
-                <option value="Piments_forts">Piments forts</option>
+                {% for garniture in garnitures %}
+                <option>{{ garniture[1] }}</option>
+                {% endfor %}
             </select>
 
             <select id="garniture2" name="garniture2" required>
                 <option value="">Veuiller choisir une garniture</option>
-                <option value="Aucune">Aucune</option>
-                <option value="Pepperoni">Pepperoni</option>
-                <option value="Champignons">Champignons</option>
-                <option value="Oignons">Oignons</option>
-                <option value="Poivrons">Poivrons</option>
-                <option value="Olives">Olives</option>
-                <option value="Anchois">Anchois</option>
-                <option value="Bacon">Bacon</option>
-                <option value="Poulet">Poulet</option>
-                <option value="Maïs">Maïs</option>
-                <option value="Fromage">Fromage</option>
-                <option value="Piments_forts">Piments forts</option>
+                {% for garniture in garnitures %}
+                <option>{{ garniture[1] }}</option>
+                {% endfor %}
             </select>
 
             <select id="garniture3" name="garniture3" required>
                 <option value="">Veuiller choisir une garniture</option>
-                <option value="Aucune">Aucune</option>
-                <option value="Pepperoni">Pepperoni</option>
-                <option value="Champignons">Champignons</option>
-                <option value="Oignons">Oignons</option>
-                <option value="Poivrons">Poivrons</option>
-                <option value="Olives">Olives</option>
-                <option value="Anchois">Anchois</option>
-                <option value="Bacon">Bacon</option>
-                <option value="Poulet">Poulet</option>
-                <option value="Maïs">Maïs</option>
-                <option value="Fromage">Fromage</option>
-                <option value="Piments_forts">Piments forts</option>
+                {% for garniture in garnitures %}
+                <option>{{ garniture[1] }}</option>
+                {% endfor %}
             </select>
 
             <select id="garniture4" name="garniture4" required>
                 <option value="">Veuiller choisir une garniture</option>
-                <option value="Aucune">Aucune</option>
-                <option value="Pepperoni">Pepperoni</option>
-                <option value="Champignons">Champignons</option>
-                <option value="Oignons">Oignons</option>
-                <option value="Poivrons">Poivrons</option>
-                <option value="Olives">Olives</option>
-                <option value="Anchois">Anchois</option>
-                <option value="Bacon">Bacon</option>
-                <option value="Poulet">Poulet</option>
-                <option value="Maïs">Maïs</option>
-                <option value="Fromage">Fromage</option>
-                <option value="Piments_forts">Piments forts</option>
+                {% for garniture in garnitures %}
+                <option>{{ garniture[1] }}</option>
+                {% endfor %}
             </select>
         </div>
 

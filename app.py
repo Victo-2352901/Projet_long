@@ -23,6 +23,11 @@ connexion = mysql.connector.connect(
     port=db_port
 )
 
+if connexion.is_connected():
+    print("Connexion réussie à la base de données")
+else:
+    print("Échec de la connexion à la base de données")
+
 nom = "";
 telephone = "";
 addresse = "";
@@ -35,7 +40,21 @@ garniture4 = "";
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    cursor = connexion.cursor()
+    cursor.execute("SELECT * FROM garnitures")
+    garnitures = cursor.fetchall()
+
+    cursor.execute("SELECT * FROM sauces")
+    sauces = cursor.fetchall()
+
+    cursor.execute("SELECT * FROM croutes")
+    croutes = cursor.fetchall()
+
+
+    cursor.close()
+
+
+    return render_template('index.html', garnitures=garnitures, sauces=sauces,croutes=croutes)
 
 @app.route('/confirmeCommande', methods=['POST'])
 def greet():
@@ -51,5 +70,9 @@ def greet():
 
     return render_template('confirmeCommande.html', nom=nom, telephone=telephone,addresse=addresse,croute=croute,sauce=sauce,garniture1=garniture1,garniture2=garniture2,garniture3=garniture3,garniture4=garniture4)
 
+@app.route('/insertionPizza')
+def insertion():
+    
+    return render_template('index.html')
 if (__name__ == '__main__'):
     app.run(debug=True)
