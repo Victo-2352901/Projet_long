@@ -1,79 +1,19 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Commande de pizza</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
 
-    <h1>Commande de Pizza</h1>
-
-    <form id="formulairePizza" action="/confirmeCommande" method="POST">
-        
-        <div>
-            <label for="nom">Nom :</label>
-            <input type="text" id="nom" name="nom" required>
-
-            <label for="telephone">Numéro de telephone :</label>
-            <input type="text" id="telephone" name="telephone" required>
-
-            <label for="addresse">Addresse de livraison :</label>
-            <input type="text" id="addresse" name="addresse" required>
+    <title>Menu</title>
+</head>
+    <body>
+        <div class="container">
+            <h1 class="titre">Pizzeria chez Antho</h1>
+            <div class="boutons">
+                <a href="/formulairePizza"><button class="btn">Commander une pizza</button></a>
+                <a href="/afficheCommande"><button class="btn">Commandes en attente</button></a>
+            </div>
         </div>
-        <div>
-            <label for="croute">Croûte :</label>
-            <select id="croute" name="croute" required>
-                {% for croute in croutes %}
-                <option>{{ croute[1] }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        
-        <div>
-            <label for="sauce">Sauce :</label>
-            <select id="sauce" name="sauce" required>
-                {% for sauce in sauces %}
-                <option>{{ sauce[1] }}</option>
-                {% endfor %}
-            </select>
-        </div>    
-        
-        <div id="garniture">
-            <label for="garniture1">Garnitures : </label>
-            <select id="garniture1" name="garniture1" required>
-                <option value="">Veuiller choisir une garniture</option>
-                {% for garniture in garnitures %}
-                <option>{{ garniture[1] }}</option>
-                {% endfor %}
-            </select>
-
-            <select id="garniture2" name="garniture2" required>
-                <option value="">Veuiller choisir une garniture</option>
-                {% for garniture in garnitures %}
-                <option>{{ garniture[1] }}</option>
-                {% endfor %}
-            </select>
-
-            <select id="garniture3" name="garniture3" required>
-                <option value="">Veuiller choisir une garniture</option>
-                {% for garniture in garnitures %}
-                <option>{{ garniture[1] }}</option>
-                {% endfor %}
-            </select>
-
-            <select id="garniture4" name="garniture4" required>
-                <option value="">Veuiller choisir une garniture</option>
-                {% for garniture in garnitures %}
-                <option>{{ garniture[1] }}</option>
-                {% endfor %}
-            </select>
-        </div>
-
-        <!-- Bouton de soumission -->
-        <button type="submit">Valider la commande</button>
-    </form>
-
-    
-  </body>
+    </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commandes<</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='affiche.css') }}">
+</head>
+    <body>
+        <h1>Commandes en attente</h1>
+        <div id="info-container">
+            {% for commande in commandes %}
+                <div>
+                    <form action="/changerEtat" method="post">
+                        <label for="commandeID">Commande de : </label>
+                        <input type="text" name="commandeID" value="{{ commande[3] }}" placeholder="{{ commande[3] }}" readonly>
+
+                        <label for="commandeEtat">État : </label>
+                        <input type="text" name="commandeEtat" value="{{ commande[2] }}" placeholder="{{ commande[2] }}" readonly>
+
+                        <input type="hidden" value="{{ commande[0] }}" name="id_livraison">
+                        <button type="submit">Retirer la commande</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+        <div>
+            <button><a href="/">Retour au menu</a></button>
+        </div>
+    </body>
+</html>

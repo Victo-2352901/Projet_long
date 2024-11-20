@@ -1,33 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
     <title>Confirmation</title>
-</head>
-    <body>
-    <h1>Confirmation</h1>
-    
-    <p>Nom : {{ nom }}</p>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='confirmation.css') }}">
+  </head>
+  <body>
 
-    <p>Numéro de télephone : {{ telephone }}</p>
+    <h1>Confirmation de la commande</h1>
 
-    <p>Addresse de livraison : {{ addresse }}</p>
-    
-    <p>Croute choisi : {{ croute }}</p>
+    <form id="formulairePizza" action="/insertionPizza" method="POST">
+        
+        <div>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" value="{{ nom }}" required readonly>
 
-    <p>Sauce choisi : {{ sauce }}</p>
+            <label for="telephone">Numéro de telephone :</label>
+            <input type="text" id="telephone" name="telephone" value="{{ telephone }}" required readonly>
 
-    <p>Garniture #1 : {{ garniture1 }}</p>
+            <label for="addresse">Addresse de livraison :</label>
+            <input type="text" id="addresse" name="addresse" value="{{ addresse }}" required readonly>
+        </div>
+        <div>
+            <label for="croute">Croûte :</label>
+            <select id="croute" name="croute" required>
+                <option>{{ croute }}</option>
+            </select>
+        </div>
+        
+        <div>
+            <label for="sauce">Sauce :</label>
+            <select id="sauce" name="sauce" required>
+                <option>{{ sauce }}</option>
+            </select>
+        </div>    
+        
+        <div id="garniture">
+            <label for="garniture1">Garnitures : </label>
+            <select id="garniture1" name="garniture1" required>
+                <option>{{ garniture1 }}</option>
+            </select>
 
-    <p>Garniture #2 : {{ garniture2 }}</p>
+            <select id="garniture2" name="garniture2" required>
+                <option>{{ garniture2 }}</option>
+            </select>
 
-    <p>Garniture #3 : {{ garniture3 }}</p>
+            <select id="garniture3" name="garniture3" required>
+                
+                <option>{{ garniture3 }}</option>
+            </select>
 
-    <p>Garniture #4 : {{ garniture4 }}</p>
+            <select id="garniture4" name="garniture4" required>
+                <option>{{ garniture4 }}</option>
+            </select>
+        </div>
 
-    <p>Garniture #4 : {{ garniture4id }}</p>
-
-    <a href="insertionPizza">Confirmer</a>
-    </body>
+        <!-- Bouton de soumission -->
+        <button type="submit">Confirmer la commande</button>
+    </form>
+    <div>
+        <button><a href="/">Retour au menu</a></button>
+    </div>
+  </body>
 </html>
